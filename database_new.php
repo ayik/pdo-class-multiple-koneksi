@@ -103,7 +103,7 @@ class eQuery
 			$obj = $this->con->prepare($sql_statement);
 			if (!$unnamed) {
 				for ($i=0; $i < count($params); $i++) { 
-					$params_split = explode($delimiter, $param[$i]);
+					$params_split = explode($delimiter, $params[$i]);
 					(trim($params_split[2])=="INT") ? $obj->bindParam($params_split[0], $params_split[1], PDO::PARAM_INT) : $obj->bindParam($params_split[0], $params_split[1], PDO::PARAM_STR);
 				}
 				try {
