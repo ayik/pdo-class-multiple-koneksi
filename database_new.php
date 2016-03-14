@@ -21,7 +21,7 @@ class eQuery
 	/* Variable $pass, Password database */
 	private $pass;
 	/* Variable $tipe_database, ekplisit tipe */
-	private $tipe_database
+	private $tipe_database;
 
 	/* Variable $sql, eksekusi query */
 	private $sql;
@@ -31,7 +31,7 @@ class eQuery
 	private $err_msg = "";
 
 	/* Konstruk koneksi ke database */
-	public function __construct($tipe_database, $host, $database, $user, $Password)
+	public function __construct($tipe_database, $host, $database, $user, $pass)
 	{
 		$this->tipe_database = strtolower($tipe_database);
 		$this->host = $host;
@@ -135,7 +135,7 @@ class eQuery
 	public function insert($table, $data)
 	{
 		$this->err_msg = "";
-		if ($this->con!null) {
+		if ($this->con!=null) {
 			try{
 				$txt_fields = "";
 				$txt_values = "";
